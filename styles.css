@@ -7,7 +7,34 @@
   --cream: #f7f6ef;
   --paper: #fffefa;
   --orange: #e9935b;
+  --line: #dfe3d9;
+  --section-bg: #eaf0e6;
+  --button-hover: #f4f7f0;
+  --art-bg: #e8eee1;
+  --clock-inset: #f7f6ef;
+  --header-bg: #2f654d;
+  --header-ink: #fffefa;
+  --header-muted: #e5eee7;
   font-family: "DM Sans", sans-serif;
+}
+
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #e8efe9;
+  --muted: #afbeb3;
+  --green: #a7cfb1;
+  --green-dark: #8dbb9a;
+  --cream: #17231e;
+  --paper: #22332b;
+  --orange: #f0a773;
+  --line: #405248;
+  --section-bg: #26382e;
+  --button-hover: #30443a;
+  --art-bg: #2d4034;
+  --clock-inset: #17231e;
+  --header-bg: #243f32;
+  --header-ink: #f2f7f2;
+  --header-muted: #d5e3d8;
 }
 
 * {
@@ -39,7 +66,17 @@ a {
 }
 
 .site-header {
-  min-height: 88px;
+  width: 100%;
+  min-height: 82px;
+  margin: 0;
+  padding: 0 max(32px, calc((100% - 1120px) / 2));
+  border-bottom: 3px solid var(--orange);
+  background: var(--header-bg);
+  box-shadow: 0 7px 22px #20342e1a;
+}
+
+.site-header .brand {
+  color: var(--header-ink);
 }
 
 .brand {
@@ -62,35 +99,68 @@ a {
   display: flex;
   align-items: center;
   gap: 35px;
-  color: #536159;
+  color: var(--header-muted);
   font-size: 13px;
   font-weight: 600;
 }
 
 .navigation a,
 .primary-button,
-.refresh-button {
+.refresh-button,
+.theme-toggle {
   transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
 }
 
 .navigation a:hover {
-  color: var(--green);
+  color: var(--header-ink);
 }
 
 .navigation .nav-cta {
   padding: 12px 17px;
-  border: 1px solid #dfe3d9;
+  border: 1px solid #ffffff55;
   border-radius: 999px;
-  color: var(--ink);
+  color: var(--header-ink);
 }
 
 .navigation .nav-cta:hover {
-  border-color: var(--green);
+  border-color: var(--header-ink);
+  background: #ffffff12;
 }
 
 .nav-cta span {
   margin-left: 5px;
-  color: var(--green);
+  color: var(--orange);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 13px;
+  border: 1px solid #ffffff55;
+  border-radius: 999px;
+  background: #ffffff12;
+  color: var(--header-ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  background: #ffffff25;
+}
+
+.theme-icon {
+  color: #ffd28b;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid #ffd28b;
+  outline-offset: 3px;
 }
 
 .hero {
@@ -226,7 +296,7 @@ h1 span {
   min-height: 430px;
   overflow: hidden;
   border-radius: 47% 47% 12px 12px;
-  background: #e8eee1;
+  background: var(--art-bg);
 }
 
 .sun {
@@ -367,7 +437,7 @@ h2 {
   align-items: center;
   gap: 20px;
   padding: 24px 27px;
-  border: 1px solid #e8e8de;
+  border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--paper);
   box-shadow: 0 12px 30px #37493608;
@@ -408,7 +478,7 @@ h2 {
 .refresh-button {
   flex: 0 0 auto;
   padding: 11px 15px;
-  border: 1px solid #dfe4d9;
+  border: 1px solid var(--line);
   border-radius: 7px;
   background: transparent;
   color: var(--green);
@@ -420,7 +490,7 @@ h2 {
 
 .refresh-button:hover {
   border-color: var(--green);
-  background: #f4f7f0;
+  background: var(--button-hover);
 }
 
 .refresh-button span {
@@ -431,7 +501,7 @@ h2 {
 
 .how-section {
   padding: 56px 24px 68px;
-  background: #eaf0e6;
+  background: var(--section-bg);
   text-align: center;
 }
 
@@ -475,10 +545,10 @@ h2 {
   z-index: 5;
   width: 116px;
   aspect-ratio: 1;
-  border: 1px solid #dfe3d9;
+  border: 1px solid var(--line);
   border-radius: 50%;
   background: var(--paper);
-  box-shadow: 0 8px 26px #354a371c, inset 0 0 0 5px #f7f6ef;
+  box-shadow: 0 8px 26px #00000024, inset 0 0 0 5px var(--clock-inset);
 }
 
 .clock-number {
@@ -559,10 +629,14 @@ h2 {
 }
 
 @media (max-width: 760px) {
-  .site-header,
   .site-footer,
   .hero {
     width: min(100% - 40px, 540px);
+  }
+
+  .site-header {
+    min-height: 75px;
+    padding: 0 20px;
   }
 
   .analog-clock {
@@ -599,12 +673,8 @@ h2 {
     left: 10px;
   }
 
-  .site-header {
-    min-height: 75px;
-  }
-
   .navigation {
-    gap: 15px;
+    gap: 9px;
   }
 
   .navigation > a:not(.nav-cta) {
@@ -612,8 +682,17 @@ h2 {
   }
 
   .navigation .nav-cta {
-    padding: 10px 12px;
+    padding: 9px 10px;
     font-size: 11px;
+  }
+
+  .theme-toggle {
+    gap: 0;
+    padding: 9px 10px;
+  }
+
+  .theme-label {
+    display: none;
   }
 
   .hero {

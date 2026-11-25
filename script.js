@@ -25,6 +25,22 @@ const clock = document.querySelector("#analog-clock");
 const hourHand = document.querySelector("#hour-hand");
 const minuteHand = document.querySelector("#minute-hand");
 const secondHand = document.querySelector("#second-hand");
+const themeToggle = document.querySelector("#theme-toggle");
+const themeIcon = themeToggle.querySelector(".theme-icon");
+const themeLabel = themeToggle.querySelector(".theme-label");
+
+function setTheme(theme) {
+  const isDark = theme === "dark";
+  document.body.dataset.theme = theme;
+  themeIcon.textContent = isDark ? "☀" : "☾";
+  themeLabel.textContent = isDark ? "Claro" : "Oscuro";
+  themeToggle.setAttribute("aria-label", `Cambiar a tema ${isDark ? "claro" : "oscuro"}`);
+  themeToggle.title = `Cambiar a tema ${isDark ? "claro" : "oscuro"}`;
+}
+
+themeToggle.addEventListener("click", () => {
+  setTheme(document.body.dataset.theme === "dark" ? "light" : "dark");
+});
 
 function updateClock() {
   const now = new Date();
