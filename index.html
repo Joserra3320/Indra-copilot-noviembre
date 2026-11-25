@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Un pequeño rincón para inspirarte, explorar ideas y empezar algo nuevo."
+    />
+    <title>Brújula — Encuentra tu próxima idea</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Brújula, inicio">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        brújula
+      </a>
+      <nav class="navigation" aria-label="Navegación principal">
+        <a href="#inspiracion">Inspiración</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a class="nav-cta" href="#inspiracion">Encuentra una idea <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> UN BUEN DÍA PARA EMPEZAR</p>
+          <h1 id="hero-title">Las grandes ideas empiezan con <span>un pequeño paso.</span></h1>
+          <p class="hero-description">
+            Un espacio para hacer una pausa, despertar la curiosidad y encontrar
+            inspiración para eso que llevas tiempo queriendo hacer.
+          </p>
+          <a class="primary-button" href="#inspiracion">
+            Encuentra tu chispa <span aria-hidden="true">→</span>
+          </a>
+          <div class="social-proof">
+            <div class="avatar-stack" aria-hidden="true">
+              <span class="avatar avatar-one">M</span>
+              <span class="avatar avatar-two">L</span>
+              <span class="avatar avatar-three">A</span>
+            </div>
+            <p><strong>Pequeños comienzos.</strong><br />Grandes posibilidades.</p>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Ilustración abstracta de una flor y un sol">
+          <div class="sun"></div>
+          <div class="flower flower-large" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <i></i>
+          </div>
+          <div class="flower flower-small" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+            <i></i>
+          </div>
+          <span class="sparkle sparkle-one" aria-hidden="true">✳</span>
+          <span class="sparkle sparkle-two" aria-hidden="true">✦</span>
+          <span class="art-caption">CRECE A TU RITMO</span>
+          <div class="art-note"><span>✿</span> Todo empieza<br />por imaginarlo.</div>
+        </div>
+      </section>
+
+      <section class="inspiration-section" id="inspiracion" aria-labelledby="inspiration-title">
+        <div class="section-heading">
+          <p class="eyebrow">UNA IDEA PARA HOY</p>
+          <h2 id="inspiration-title">¿Y si empiezas por aquí?</h2>
+        </div>
+        <article class="idea-card" aria-live="polite">
+          <div class="idea-icon" aria-hidden="true">✎</div>
+          <div class="idea-content">
+            <p class="idea-label">TU PEQUEÑO RETO</p>
+            <p class="idea-text" id="idea-text">Dedica diez minutos a aprender algo que siempre te haya dado curiosidad.</p>
+          </div>
+          <button class="refresh-button" id="new-idea" type="button">
+            Otra idea <span aria-hidden="true">↻</span>
+          </button>
+        </article>
+      </section>
+
+      <section class="how-section" id="como-funciona" aria-labelledby="how-title">
+        <p class="eyebrow">SIN PRISAS, SIN PERFECCIÓN</p>
+        <h2 id="how-title">Solo hace falta empezar.</h2>
+        <p>La inspiración no siempre llega de golpe. A veces aparece cuando te das permiso para probar.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#" aria-label="Brújula, inicio"><span class="brand-mark" aria-hidden="true">✳</span> brújula</a>
+      <p>Hecho para quienes todavía tienen curiosidad. <span aria-hidden="true">♥</span></p>
+    </footer>
+
+    <aside class="analog-clock" id="analog-clock" role="img" aria-label="Reloj analógico, hora local">
+      <span class="clock-number clock-twelve" aria-hidden="true">12</span>
+      <span class="clock-number clock-three" aria-hidden="true">3</span>
+      <span class="clock-number clock-six" aria-hidden="true">6</span>
+      <span class="clock-number clock-nine" aria-hidden="true">9</span>
+      <span class="clock-hand hour-hand" id="hour-hand" aria-hidden="true"></span>
+      <span class="clock-hand minute-hand" id="minute-hand" aria-hidden="true"></span>
+      <span class="clock-hand second-hand" id="second-hand" aria-hidden="true"></span>
+      <span class="clock-pin" aria-hidden="true"></span>
+    </aside>
+  </body>
+</html>
