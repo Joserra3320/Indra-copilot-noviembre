@@ -43,6 +43,10 @@ También puedes usar la extensión **Live Server** de Visual Studio Code:
 2. Haz clic con el botón derecho sobre `index.html`.
 3. Selecciona **Open with Live Server**.
 
+## Pruebas
+
+Abre `tests/test-runner.html` en un navegador para ejecutar las pruebas de ideas, cambio de tema y reloj. El ejecutor usa únicamente JavaScript y APIs del navegador; no requiere instalar dependencias.
+
 ## Funcionalidad
 
 ### Ideas de inspiración
